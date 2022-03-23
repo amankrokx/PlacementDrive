@@ -1,7 +1,6 @@
 import * as React from "react";
 // import StudentDetails from "../Student_Details/StudentDetails";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
-import DataService from "../service";
 import { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
@@ -47,20 +46,13 @@ function Copyright(props) {
   );
 }
 
-// fetch("http://localhost:3000/status", {
-//   method: "GET",
-//   mode: "cors",
-//   credentials: "same-origin",
-// })
-//   .then((data) => data.json())
-//   .then((data) => console.log(data));
 console.log("working");
-/*
-fet("http://localhost:3000/status")
-  .then((data) => console.log(data))
-  .catch((err) => console.error(err));
-*/
-const initialValues = {
+
+fet("/status")
+  .then((data) => {console.log(data)})
+  .catch((err) => {console.error(err)});
+
+let initialValues = {
   father_name: null,
   mother_name: null,
   cgpa_10th: null,
